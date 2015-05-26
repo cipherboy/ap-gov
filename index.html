@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Kryptos - H. Jiang, A. Scheel</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<style type="text/css">
+			.top {
+				width: 100%;
+				display: inline-block;
+				position: absolute;
+				top: -100px;
+				left: 0%;
+			}
+					 
+			.left {
+				width: 45%;
+				height: 500px;
+				margin: 0 auto;
+				display: inline-block;
+				position: absolute;
+				top: 0px;
+				left: 0%;
+			}
+			
+			.right {
+				width: 45%;
+				height: 500px;
+				margin: 0 auto;
+				display: inline-block;
+				position: absolute;
+				top: 0px;
+				left: 50%;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Kryptos</h1>
+					<h3>Hongyi "It's Pronounced David" Jiang</h3>
+					<h3>Alexander "Maurice" Scheel</h3>
+				</section>
+
+				<section>
+					<img alt="Kryptos" src="http://upload.wikimedia.org/wikipedia/commons/e/e0/Kryptos_sculptor.jpg">
+					<p>
+						<i>Kryptos</i> by J. Sanborn commissioned in 1989.
+					</p>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>Background</h2>
+						<ul>
+							<li>The CIA was building a new headquarters in Langley, VA</li>
+							<li>They wanted art that is “indicative of the CIA’s work”</li>
+							<li>Spent $250,000 on a commission</li>
+						</ul>
+					</section>
+					<section>
+						<div class="top">
+							<h2>James Sanborn, Artist</h2>
+						</div>
+						<div class="left">
+							<ul>
+								<li>Born in Washington, D.C.</li>
+								<li>Known for using natural materials that create a sense of mystery</li>
+								<li>Got commission after design was reviewed by NEA and CIA</li>
+								<li>Worked four months with a retired CIA cryptographer and prominent fiction writer</li>
+							</ul>
+						</div>
+						<div class="right">
+							<img width="400" height="475" alt="Sanborn" src="http://elonka.com/kryptos/sanborn/JamesSanborn.jpg">
+						</div>
+					</section>
+					<section>
+						<h2>Kryptos</h2>
+						<ul>
+							<li>Contains three parts
+								<ul>
+									<li>Petrified tree support</li>
+									<li>Bubbling pool</li>
+									<li>Copperplate screen</li>
+								</ul>
+							</li>
+							<li>Screen contains 1735 letters
+								<ul>
+									<li>Contains the all important code</li>
+									<li>A great challenge for CIA and NSA employees</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<h2>Breaking the Code</h2>
+					<ul>
+						<li>In 1998, a physicist for CIA announced that he has cracked code using paper and pencil</li>
+						<li>A year later a computer scientist cracked it using computers</li>
+						<li>The last section of 97 characters, called K4, remains uncracked</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>K2 Interactive</h2>
+				</section>
+				
+				<section>
+					<div class="top">
+						<h2>K3 Interactive</h2>
+					</div>
+					<div class="left">
+					<pre id="k3display" style="font-size: 15px;">ENDYAHROHNLSRHEOCPTEOIBIDYSHNAIACHTNREYULDSLLSLLNO
+HSNOSMRWXMNETPRNGATIHNRARPESLNNELEBLPIIACAEWMTW
+NDITEENRAHCTENEUDRETNHAEOETFOLSEDTIWENHAEIOYTEY
+QHEENCTAYCREIFTBRSPAMHHEWENATAMATEGYEERLBTEEFOASFIO
+TUETUAEOTOARMAEERTNRTIBSEDDNIAAHTTMSTEWPIEROAGR
+IEWFEBAECTDDHILCEIHSITEGOEAOSDDRYDLORITRKLMLEHA
+GTDHARDPNEOHMGFMFEUHEECDMRIPFEIMEHNLSSTTRTVDOHW</pre>
+					</div>
+					<div class="right">
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<button style="text-align: center; height: 40px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" onclick="k3init()">Start</button>
+						<input style="text-align: center; height: 36px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" id="k3x" type="number" placeholder="24"><span style="font-size: 15px;">x</span><input style="text-align: center; height: 36px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" id="k3y" type="number" placeholder="14">
+						<button style="text-align: center; height: 40px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" onclick="k3resize(parseInt(document.getElementById('k3x').value), parseInt(document.getElementById('k3y').value))">Resize</button>
+						<button style="text-align: center; height: 40px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" onclick="k3rotate()">Right</button>
+						<div>
+							<br>
+							<h3  style="font-size: 20px;">Instructions</h3>
+							<ol style="font-size: 15px;">
+								<li>Press start (converts to 24x14)</li>
+								<li>Rotate right</li>
+								<li>Convert to 8x42</li>
+								<li>Rotate right</li>
+								<li>Read!</li>
+							</ol>
+						</div>
+					</div>
+					<script type="text/javascript">
+						k3 = "ENDYAHROHNLSRHEOCPTEOIBIDYSHNAIACHTNREYULDSLLSLLNOHSNOSMRWXMNETPRNGATIHNRARPESLNNELEBLPIIACAEWMTWNDITEENRAHCTENEUDRETNHAEOETFOLSEDTIWENHAEIOYTEYQHEENCTAYCREIFTBRSPAMHHEWENATAMATEGYEERLBTEEFOASFIOTUETUAEOTOARMAEERTNRTIBSEDDNIAAHTTMSTEWPIEROAGRIEWFEBAECTDDHILCEIHSITEGOEAOSDDRYDLORITRKLMLEHAGTDHARDPNEOHMGFMFEUHEECDMRIPFEIMEHNLSSTTRTVDOHW";
+						k3text = k3;
+						k3working = [];
+
+						function k3textify() {
+							k3text = "";
+							for (var i in k3working) {
+								k3text += k3working[i].join('');
+							}
+						}
+
+						function k3display() {
+							var disp = "";
+							for (var i in k3working) {
+								disp += k3working[i].join(' ') + "\n";
+							}
+							document.getElementById('k3display').innerHTML = disp;
+						}
+
+						function k3resize(x, y) {
+							k3textify();
+							k3working = [];
+							for (var i = 0; i < y; i++) {
+								k3working.push(k3text.substr(i*x, x).split(''));
+							}
+							k3display();
+						}
+
+						function k3rotate() {
+							var temp = [];
+							for (var y = 0; y < k3working[0].length; y++) {
+								temp.push([]);
+								for (var x = 0; x < k3working.length; x++) {
+									temp[y][x] = k3working[k3working.length -1 - x][y];
+								}
+							}
+							document.getElementById('k3x').value = temp[0].length;
+							document.getElementById('k3y').value = temp.length;
+							k3working = temp;
+							k3display();
+						}
+
+						function k3init() {
+							k3working = [];
+							for (var i = 0; i < 14; i++) {
+								k3working.push(k3.substr(i*24, 24).split(''));
+							}
+							document.getElementById('k3x').value = k3working[0].length;
+							document.getElementById('k3y').value = k3working.length;
+							k3display();
+						}
+					</script>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
