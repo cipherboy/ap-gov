@@ -138,15 +138,219 @@
 				</section>
 				
 				<section>
+					<h2>Cipherblock</h2>
+					<pre style="font-size: 15px; text-align: center; font-family: monospace;">
+K R Y P T O S A B C D E F G H I J L M N Q U V W X Z
+R Y P T O S A B C D E F G H I J L M N Q U V W X Z K
+Y P T O S A B C D E F G H I J L M N Q U V W X Z K R
+P T O S A B C D E F G H I J L M N Q U V W X Z K R Y
+T O S A B C D E F G H I J L M N Q U V W X Z K R Y P
+O S A B C D E F G H I J L M N Q U V W X Z K R Y P T
+S A B C D E F G H I J L M N Q U V W X Z K R Y P T O
+A B C D E F G H I J L M N Q U V W X Z K R Y P T O S
+B C D E F G H I J L M N Q U V W X Z K R Y P T O S A
+C D E F G H I J L M N Q U V W X Z K R Y P T O S A B
+D E F G H I J L M N Q U V W X Z K R Y P T O S A B C
+E F G H I J L M N Q U V W X Z K R Y P T O S A B C D
+F G H I J L M N Q U V W X Z K R Y P T O S A B C D E
+G H I J L M N Q U V W X Z K R Y P T O S A B C D E F
+H I J L M N Q U V W X Z K R Y P T O S A B C D E F G
+I J L M N Q U V W X Z K R Y P T O S A B C D E F G H
+J L M N Q U V W X Z K R Y P T O S A B C D E F G H I
+L M N Q U V W X Z K R Y P T O S A B C D E F G H I J
+M N Q U V W X Z K R Y P T O S A B C D E F G H I J L
+N Q U V W X Z K R Y P T O S A B C D E F G H I J L M
+Q U V W X Z K R Y P T O S A B C D E F G H I J L M T
+U V W X Z K R Y P T O S A B C D E F G H I J L M T Q
+V W X Z K R Y P T O S A B C D E F G H I J L M T Q U
+W X Z K R Y P T O S A B C D E F G H I J L M T Q U V
+X Z K R Y P T O S A B C D E F G H I J L M T Q U V W
+Z K R Y P T O S A B C D E F G H I J L M T Q U V W X
+					</pre>
+				</section>
+				
+				<section>
 					<section>
 						<h2>K1,K2 - Description</h2>
 						<ul>
 							<li>Vigenere cipher</li>
 							<li>Turing's method of analysis</li>
 						</ul>
+						<p style="font-size: 15px; font-family: monospace;">EMUFPHZLRFAXYUSDJKZLDKRNSHGNFIVJYQTQUXQBQVYUVLLTREVJYQTMKYRDMFD</p>
+						<p style="font-size: 15px; font-family: monospace;">VFPJUDEEHZWETZYVGWHKKQETGFQJNCEGGWHKK?DQMCPFQZDQMMIAGPFXHQRLGTIM<br>VMZJANQLVKQEDAGDVFRPJUNGEUNAQZGZLECGYUXUEENJTBJLBQCRTBJDFHRRYIZE<br>TKZEMVDUFKSJHKFWHKUWQLSZFTIHHDDDUVH?DWKBFUFPWNTDFIYCUQZEREEVLDKF<br>EZMOQQJLTTUGSYQPFEUNLAVIDXFLGGTEZ?FKZBSFDQVGOGIPUFXHHDRKFFHQNTGP<br>UAECNUVPDJMQCLQUMUNEDFQELZZVRRGKFFVOEEXBDMVPNFQXEZLGREDNQFMPNZGL<br>FLPMRJQYALMGNUVPDXVKPDQUMEBEDMHDAFMJGZNUPLGEWJLLAETG</p>
 					</section>
 					<section>
-						<h2>K1,K2 - Interactive</h2>
+						<div class="top">
+							<h2>K1,K2 - Interactive</h2>
+						</div>
+						<div class="left">
+							<p style="text-align: left; font-size: 15px; font-family: monospace;" id="k12original"></p>
+							<p style="text-align: left; font-size: 15px; font-family: monospace;" id="k12decrypted"></p>
+							<button style="text-align: center; height: 40px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" onclick="k1init()">Load K1</button>
+							<button style="text-align: center; height: 40px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" onclick="k2init()">Load K2</button>
+							<br>
+							<input style="text-align: center; height: 36px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" id="k12wordwidth" type="text" pattern="[0-9]*" placeholder="10">
+							<button style="text-align: center; height: 40px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" onclick="k12analyze(parseInt(document.getElementById('k12wordwidth').value))">Analyze</button>
+							<input style="text-align: center; height: 36px; width: 100px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" id="k12word" type="text" placeholder="SECRET">
+							<button style="text-align: center; height: 40px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" onclick="k12decrypt(document.getElementById('k12word').value)">Decrypt</button>
+							<br>
+							<br>
+							<div id="instructions">
+								<h2 style="font-size: 20px;">Instructions</h2>
+								<ol style="font-size: 15px;">
+									<li>Load K1 or K2</li>
+									<li>Choose keyword lengths</li>
+									<li>Analyze using Turing's method</li>
+									<li>Guess a key word</li>
+									<li>Decrypt and read</li>
+								</ol>
+							</div>
+						</div>
+						<div class="right">
+							<pre style="text-align: left; font-size: 15px; font-family: monospace;" id="k12analysis"></pre>
+						</div>
+						<script type="text/javascript">
+							function ord(string) {
+								//  discuss at: http://phpjs.org/functions/ord/
+								// original by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+								// bugfixed by: Onno Marsman
+								// improved by: Brett Zamir (http://brett-zamir.me)
+								//    input by: incidence
+								//   example 1: ord('K');
+								//   returns 1: 75
+								//   example 2: ord('\uD800\uDC00'); // surrogate pair to create a single Unicode character
+								//   returns 2: 65536
+
+								var str = string + '',
+								code = str.charCodeAt(0);
+								if (0xD800 <= code && code <= 0xDBFF) {
+									// High surrogate (could change last hex to 0xDB7F to treat high private surrogates as single characters)
+									var hi = code;
+									if (str.length === 1) {
+										// This is just a high surrogate with no following low surrogate, so we return its value;
+										return code;
+										// we could also throw an error as it is not a complete character, but someone may want to know
+									}
+									var low = str.charCodeAt(1);
+									return ((hi - 0xD800) * 0x400) + (low - 0xDC00) + 0x10000;
+								}
+								if (0xDC00 <= code && code <= 0xDFFF) {
+									// Low surrogate
+									// This is just a low surrogate with no preceding high surrogate, so we return its value;
+									return code;
+									// we could also throw an error as it is not a complete character, but someone may want to know
+								}
+								return code;
+							}
+						</script>
+						<script type="text/javascript">
+							k1 = "EMUFPHZLRFAXYUSDJKZLDKRNSHGNFIVJYQTQUXQBQVYUVLLTREVJYQTMKYRDMFD";
+							k2 = "VFPJUDEEHZWETZYVGWHKKQETGFQJNCEGGWHKK?DQMCPFQZDQMMIAGPFXHQRLGTIMVMZJANQLVKQEDAGDVFRPJUNGEUNAQZGZLECGYUXUEENJTBJLBQCRTBJDFHRRYIZETKZEMVDUFKSJHKFWHKUWQLSZFTIHHDDDUVH?DWKBFUFPWNTDFIYCUQZEREEVLDKFEZMOQQJLTTUGSYQPFEUNLAVIDXFLGGTEZ?FKZBSFDQVGOGIPUFXHHDRKFFHQNTGPUAECNUVPDJMQCLQUMUNEDFQELZZVRRGKFFVOEEXBDMVPNFQXEZLGREDNQFMPNZGLFLPMRJQYALMGNUVPDXVKPDQUMEBEDMHDAFMJGZNUPLGEWJLLAETG";
+							decrypt = {'K':{'K':'K','R':'R','Y':'Y','P':'P','T':'T','O':'O','S':'S','A':'A','B':'B','C':'C','D':'D','E':'E','F':'F','G':'G','H':'H','I':'I','J':'J','L':'L','M':'M','N':'N','Q':'Q','U':'U','V':'V','W':'W','X':'X','Z':'Z'},'R':{'R':'K','Y':'R','P':'Y','T':'P','O':'T','S':'O','A':'S','B':'A','C':'B','D':'C','E':'D','F':'E','G':'F','H':'G','I':'H','J':'I','L':'J','M':'L','N':'M','Q':'N','U':'Q','V':'U','W':'V','X':'W','Z':'X','K':'Z'},'Y':{'Y':'K','P':'R','T':'Y','O':'P','S':'T','A':'O','B':'S','C':'A','D':'B','E':'C','F':'D','G':'E','H':'F','I':'G','J':'H','L':'I','M':'J','N':'L','Q':'M','U':'N','V':'Q','W':'U','X':'V','Z':'W','K':'X','R':'Z'},'P':{'P':'K','T':'R','O':'Y','S':'P','A':'T','B':'O','C':'S','D':'A','E':'B','F':'C','G':'D','H':'E','I':'F','J':'G','L':'H','M':'I','N':'J','Q':'L','U':'M','V':'N','W':'Q','X':'U','Z':'V','K':'W','R':'X','Y':'Z'},'T':{'T':'K','O':'R','S':'Y','A':'P','B':'T','C':'O','D':'S','E':'A','F':'B','G':'C','H':'D','I':'E','J':'F','L':'G','M':'H','N':'I','Q':'J','U':'L','V':'M','W':'N','X':'Q','Z':'U','K':'V','R':'W','Y':'X','P':'Z'},'O':{'O':'K','S':'R','A':'Y','B':'P','C':'T','D':'O','E':'S','F':'A','G':'B','H':'C','I':'D','J':'E','L':'F','M':'G','N':'H','Q':'I','U':'J','V':'L','W':'M','X':'N','Z':'Q','K':'U','R':'V','Y':'W','P':'X','T':'Z'},'S':{'S':'K','A':'R','B':'Y','C':'P','D':'T','E':'O','F':'S','G':'A','H':'B','I':'C','J':'D','L':'E','M':'F','N':'G','Q':'H','U':'I','V':'J','W':'L','X':'M','Z':'N','K':'Q','R':'U','Y':'V','P':'W','T':'X','O':'Z'},'A':{'A':'K','B':'R','C':'Y','D':'P','E':'T','F':'O','G':'S','H':'A','I':'B','J':'C','L':'D','M':'E','N':'F','Q':'G','U':'H','V':'I','W':'J','X':'L','Z':'M','K':'N','R':'Q','Y':'U','P':'V','T':'W','O':'X','S':'Z'},'B':{'B':'K','C':'R','D':'Y','E':'P','F':'T','G':'O','H':'S','I':'A','J':'B','L':'C','M':'D','N':'E','Q':'F','U':'G','V':'H','W':'I','X':'J','Z':'L','K':'M','R':'N','Y':'Q','P':'U','T':'V','O':'W','S':'X','A':'Z'},'C':{'C':'K','D':'R','E':'Y','F':'P','G':'T','H':'O','I':'S','J':'A','L':'B','M':'C','N':'D','Q':'E','U':'F','V':'G','W':'H','X':'I','Z':'J','K':'L','R':'M','Y':'N','P':'Q','T':'U','O':'V','S':'W','A':'X','B':'Z'},'D':{'D':'K','E':'R','F':'Y','G':'P','H':'T','I':'O','J':'S','L':'A','M':'B','N':'C','Q':'D','U':'E','V':'F','W':'G','X':'H','Z':'I','K':'J','R':'L','Y':'M','P':'N','T':'Q','O':'U','S':'V','A':'W','B':'X','C':'Z'},'E':{'E':'K','F':'R','G':'Y','H':'P','I':'T','J':'O','L':'S','M':'A','N':'B','Q':'C','U':'D','V':'E','W':'F','X':'G','Z':'H','K':'I','R':'J','Y':'L','P':'M','T':'N','O':'Q','S':'U','A':'V','B':'W','C':'X','D':'Z'},'F':{'F':'K','G':'R','H':'Y','I':'P','J':'T','L':'O','M':'S','N':'A','Q':'B','U':'C','V':'D','W':'E','X':'F','Z':'G','K':'H','R':'I','Y':'J','P':'L','T':'M','O':'N','S':'Q','A':'U','B':'V','C':'W','D':'X','E':'Z'},'G':{'G':'K','H':'R','I':'Y','J':'P','L':'T','M':'O','N':'S','Q':'A','U':'B','V':'C','W':'D','X':'E','Z':'F','K':'G','R':'H','Y':'I','P':'J','T':'L','O':'M','S':'N','A':'Q','B':'U','C':'V','D':'W','E':'X','F':'Z'},'H':{'H':'K','I':'R','J':'Y','L':'P','M':'T','N':'O','Q':'S','U':'A','V':'B','W':'C','X':'D','Z':'E','K':'F','R':'G','Y':'H','P':'I','T':'J','O':'L','S':'M','A':'N','B':'Q','C':'U','D':'V','E':'W','F':'X','G':'Z'},'I':{'I':'K','J':'R','L':'Y','M':'P','N':'T','Q':'O','U':'S','V':'A','W':'B','X':'C','Z':'D','K':'E','R':'F','Y':'G','P':'H','T':'I','O':'J','S':'L','A':'M','B':'N','C':'Q','D':'U','E':'V','F':'W','G':'X','H':'Z'},'J':{'J':'K','L':'R','M':'Y','N':'P','Q':'T','U':'O','V':'S','W':'A','X':'B','Z':'C','K':'D','R':'E','Y':'F','P':'G','T':'H','O':'I','S':'J','A':'L','B':'M','C':'N','D':'Q','E':'U','F':'V','G':'W','H':'X','I':'Z'},'L':{'L':'K','M':'R','N':'Y','Q':'P','U':'T','V':'O','W':'S','X':'A','Z':'B','K':'C','R':'D','Y':'E','P':'F','T':'G','O':'H','S':'I','A':'J','B':'L','C':'M','D':'N','E':'Q','F':'U','G':'V','H':'W','I':'X','J':'Z'},'M':{'M':'K','N':'R','Q':'Y','U':'P','V':'T','W':'O','X':'S','Z':'A','K':'B','R':'C','Y':'D','P':'E','T':'F','O':'G','S':'H','A':'I','B':'J','C':'L','D':'M','E':'N','F':'Q','G':'U','H':'V','I':'W','J':'X','L':'Z'},'N':{'N':'K','Q':'R','U':'Y','V':'P','W':'T','X':'O','Z':'S','K':'A','R':'B','Y':'C','P':'D','T':'E','O':'F','S':'G','A':'H','B':'I','C':'J','D':'L','E':'M','F':'N','G':'Q','H':'U','I':'V','J':'W','L':'X','M':'Z'},'Q':{'Q':'K','U':'R','V':'Y','W':'P','X':'T','Z':'O','K':'S','R':'A','Y':'B','P':'C','T':'D','O':'E','S':'F','A':'G','B':'H','C':'I','D':'J','E':'L','F':'M','G':'N','H':'Q','I':'U','J':'V','L':'W','M':'X','N':'Z'},'U':{'U':'K','V':'R','W':'Y','X':'P','Z':'T','K':'O','R':'S','Y':'A','P':'B','T':'C','O':'D','S':'E','A':'F','B':'G','C':'H','D':'I','E':'J','F':'L','G':'M','H':'N','I':'Q','J':'U','L':'V','M':'W','N':'X','Q':'Z'},'V':{'V':'K','W':'R','X':'Y','Z':'P','K':'T','R':'O','Y':'S','P':'A','T':'B','O':'C','S':'D','A':'E','B':'F','C':'G','D':'H','E':'I','F':'J','G':'L','H':'M','I':'N','J':'Q','L':'U','M':'V','N':'W','Q':'X','U':'Z'},'W':{'W':'K','X':'R','Z':'Y','K':'P','R':'T','Y':'O','P':'S','T':'A','O':'B','S':'C','A':'D','B':'E','C':'F','D':'G','E':'H','F':'I','G':'J','H':'L','I':'M','J':'N','L':'Q','M':'U','N':'V','Q':'W','U':'X','V':'Z'},'X':{'X':'K','Z':'R','K':'Y','R':'P','Y':'T','P':'O','T':'S','O':'A','S':'B','A':'C','B':'D','C':'E','D':'F','E':'G','F':'H','G':'I','H':'J','I':'L','J':'M','L':'N','M':'Q','N':'U','Q':'V','U':'W','V':'X','W':'Z'},'Z':{'Z':'K','K':'R','R':'Y','Y':'P','P':'T','T':'O','O':'S','S':'A','A':'B','B':'C','C':'D','D':'E','E':'F','F':'G','G':'H','H':'I','I':'J','J':'L','L':'M','M':'N','N':'Q','Q':'U','U':'V','V':'W','W':'X','X':'Z'}};
+							alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+							frequencies = { 'A' : 84, 'B' : 23, 'C' : 21, 'D' : 46, 'E' : 116,
+											'F' : 20, 'G' : 25, 'H' : 49, 'I' : 76, 'J' : 2,
+											'K' : 5,  'L' : 38, 'M' : 34, 'N' : 66, 'O' : 66,
+											'P' : 15, 'Q' : 2,  'R' : 64, 'S' : 73, 'T' : 81,
+											'U' : 19, 'V' : 11, 'W' : 21, 'X' :  2, 'Y' : 24,
+											'Z' : 3 };
+							bans = {};
+							working = "";
+
+							for (var a in frequencies) {
+								frequencies[a] /= 1000;
+							}
+
+							for (var a in frequencies) {
+								var x = (25 * frequencies[a]) / (1 - frequencies[a]);
+								x = (20*Math.log(x)) / Math.log(10);
+								bans[ord(a) - ord('A')] = parseInt(x);
+							}
+
+							function k1init() {
+								working = "";
+								for (var i = 0; i < k1.length/5; i++) {
+									working += k1.substr(i*5, 5) + " ";
+								}
+								document.getElementById('k12original').innerHTML = working;
+								document.getElementById('k12analysis').innerHTML = '';
+								document.getElementById('k12decrypted').innerHTML = '';
+							}
+
+							function k2init() {
+								working = "";
+								for (var i = 0; i < k2.length/5; i++) {
+									working += k2.substr(i*5, 5) + " ";
+								}
+								document.getElementById('k12original').innerHTML = working;
+								document.getElementById('k12analysis').innerHTML = '';
+								document.getElementById('k12decrypted').innerHTML = '';
+							}
+
+							function k12analyze(width) {
+								if (width == NaN) {
+									width = 10;
+								}
+
+								var display = document.getElementById('k12analysis'); 
+								display.innerHTML = '';
+								var text = working.replace(/[^A-Z]/g, '').split('');
+								console.log(text);
+								console.log(width);
+								for (var lid in alphabet) {
+									var letter = alphabet[lid];
+									display.innerHTML += letter + ': '; 
+									for (var col = 0; col < width; col++) {
+										var place = col;
+										var evidence = 0;
+										while (place < text.length) {
+											var diff = ord(decrypt[letter][text[place]]) - ord('A');
+											evidence += bans[diff];
+											place += width;
+										}
+
+										console.log(evidence);
+
+										evidence = parseInt(evidence);
+
+										if (evidence > 0) {
+											var spaces = "";
+											if (evidence < 10) {
+												var spaces = "  ";
+											} else if (evidence < 100) {
+												var spaces = " ";
+											}
+
+											display.innerHTML += " " + spaces + evidence + " ";
+										} else {
+											display.innerHTML += "   . ";
+										}
+									}
+									display.innerHTML += "\n";
+								}
+							}
+
+							function k12decrypt(word) {
+								if (word == '') {
+									word = 'SECRET';
+								}
+
+								var display = document.getElementById('k12decrypted');
+								display.innerHTML = '';
+								var text = working.split('');
+								key = word.split('');
+								var kid = 0;
+								for (var tid in text) {
+									var letter = text[tid];
+									if (alphabet.indexOf(letter) != -1) {
+										display.innerHTML += decrypt[key[kid]][letter];
+										kid = (kid + 1) % key.length;
+									} else {
+										display.innerHTML += letter;
+									}
+								}
+							}
+						</script>
 					</section>
 					<section>
 						<h2>K1,K2 - Decrypted</h2>
@@ -162,6 +366,7 @@
 							<li>Standard english frequencies</li>
 							<li>Translational cipher</li>
 						</ul>
+						<p style="font-size: 15px; font-family: monospace;">ENDYAHROHNLSRHEOCPTEOIBIDYSHNAIACHTNREYULDSLLSLLNOHSNOSMRWXMNETPRNGATI<br>HNRARPESLNNELEBLPIIACAEWMTWNDITEENRAHCTENEUDRETNHAEOETFOLSEDTIWENHAEIO<br>YTEYQHEENCTAYCREIFTBRSPAMHHEWENATAMATEGYEERLBTEEFOASFIOTUETUAEOTOARMAE<br>ERTNRTIBSEDDNIAAHTTMSTEWPIEROAGRIEWFEBAECTDDHILCEIHSITEGOEAOSDDRYDLORI<br>TRKLMLEHAGTDHARDPNEOHMGFMFEUHEECDMRIPFEIMEHNLSSTTRTVDOHW</p>
 					</section>
 					<section>
 						<div class="top">
@@ -183,7 +388,7 @@ GTDHARDPNEOHMGFMFEUHEECDMRIPFEIMEHNLSSTTRTVDOHW</pre>
 							<br>
 							<br>
 							<button style="text-align: center; height: 40px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" onclick="k3init()">Start</button>
-							<input style="text-align: center; height: 36px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" id="k3x" type="number" placeholder="24"><span style="font-size: 15px;">x</span><input style="text-align: center; height: 36px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" id="k3y" type="number" placeholder="14">
+							<input style="text-align: center; height: 36px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" id="k3x" type="text" pattern="[0-9]*" placeholder="24"><span style="font-size: 15px;">&nbsp;x&nbsp;</span><input style="text-align: center; height: 36px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" id="k3y" type="text" pattern="[0-9]*" placeholder="14">
 							<button style="text-align: center; height: 40px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" onclick="k3resize(parseInt(document.getElementById('k3x').value), parseInt(document.getElementById('k3y').value))">Resize</button>
 							<button style="text-align: center; height: 40px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" onclick="k3rotate()">Right</button>
 							<div>
@@ -260,8 +465,23 @@ GTDHARDPNEOHMGFMFEUHEECDMRIPFEIMEHNLSSTTRTVDOHW</pre>
 				</section>
 				
 				<section>
-					<h2>K4 - Ciphertext</h2>
-					<p>OBKR<br>UOXOGHULBSOLIFBBWFLRVQQPRNGKSSO<br>TWTQSJQSSEKZZWATJKLUDIAWINFBNYP<br>VTTMZFPKWGDKZXTJCDIGKUHUAUEKCAR</p>
+					<section>
+						<h2>K4 - Ciphertext</h2>
+						<p>OBKR<br>UOXOGHULBSOLIFBBWFLRVQQPRNGKSSO<br>TWTQSJQSSEKZZWATJKLUDIAWINFBNYP<br>VTTMZFPKWGDKZXTJCDIGKUHUAUEKCAR</p>
+					</section>
+					<section>
+						<h2>K4 - Frequency Analysis</h2>
+						<img alt="standard" width="640" src="https://kryptosfan.files.wordpress.com/2009/06/frequency.gif"><br>
+						<img alt="standard" width="640" src="https://kryptosfan.files.wordpress.com/2009/05/step3.jpg">
+					</section>
+					<section>
+						<h2>K4 - Ideas</h2>
+						<ul>
+							<li>97 characters</li>
+							<li>Turing's method</li>
+							<li>Double vigenere?!</li>
+						</ul>
+					</section>
 				</section>
 				
 				<section>
