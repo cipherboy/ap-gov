@@ -138,97 +138,135 @@
 				</section>
 				
 				<section>
-					<h2>K2 Interactive</h2>
+					<section>
+						<h2>K1,K2 - Description</h2>
+						<ul>
+							<li>Vigenere cipher</li>
+							<li>Turing's method of analysis</li>
+						</ul>
+					</section>
+					<section>
+						<h2>K1,K2 - Interactive</h2>
+					</section>
+					<section>
+						<h2>K1,K2 - Decrypted</h2>
+						<p>BETWEEN SUBTLE SHADING AND THE ABSENCE OF LIGHT LIES THE NUANCE OF IQLUSION </p>
+						<p>IT WAS TOTALLY INVISIBLE HOWS THAT POSSIBLE ? THEY USED THE EARTHS MAGNETIC FIELD X THE INFORMATION WAS GATHERED AND TRANSMITTED UNDERGRUUND TO AN UNKNOWN LOCATION X DOES LANGLEY KNOW ABOUT THIS ? THEY SHOULD ITS BURIED OUT THERE SOMEWHERE X WHO KNOWS THE EXACT LOCATION ? ONLY WW THIS WAS HIS LAST MESSAGE X THIRTY EIGHT DEGREES FIFTY SEVEN MINUTES SIX POINT FIVE SECONDS NORTH SEVENTY SEVEN DEGREES EIGHT MINUTES FORTY FOUR SECONDS WEST X LAYER TWO </p>
+					</section>
 				</section>
 				
 				<section>
-					<div class="top">
-						<h2>K3 Interactive</h2>
-					</div>
-					<div class="left">
-					<pre id="k3display" style="font-size: 15px;">ENDYAHROHNLSRHEOCPTEOIBIDYSHNAIACHTNREYULDSLLSLLNO
+					<section>
+						<h2>K3 - Description</h2>
+						<ul>
+							<li>Standard english frequencies</li>
+							<li>Translational cipher</li>
+						</ul>
+					</section>
+					<section>
+						<div class="top">
+							<h2>K3 Interactive</h2>
+						</div>
+						<div class="left">
+						<pre id="k3display" style="font-size: 15px;">ENDYAHROHNLSRHEOCPTEOIBIDYSHNAIACHTNREYULDSLLSLLNO
 HSNOSMRWXMNETPRNGATIHNRARPESLNNELEBLPIIACAEWMTW
 NDITEENRAHCTENEUDRETNHAEOETFOLSEDTIWENHAEIOYTEY
 QHEENCTAYCREIFTBRSPAMHHEWENATAMATEGYEERLBTEEFOASFIO
 TUETUAEOTOARMAEERTNRTIBSEDDNIAAHTTMSTEWPIEROAGR
 IEWFEBAECTDDHILCEIHSITEGOEAOSDDRYDLORITRKLMLEHA
 GTDHARDPNEOHMGFMFEUHEECDMRIPFEIMEHNLSSTTRTVDOHW</pre>
-					</div>
-					<div class="right">
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<button style="text-align: center; height: 40px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" onclick="k3init()">Start</button>
-						<input style="text-align: center; height: 36px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" id="k3x" type="number" placeholder="24"><span style="font-size: 15px;">x</span><input style="text-align: center; height: 36px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" id="k3y" type="number" placeholder="14">
-						<button style="text-align: center; height: 40px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" onclick="k3resize(parseInt(document.getElementById('k3x').value), parseInt(document.getElementById('k3y').value))">Resize</button>
-						<button style="text-align: center; height: 40px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" onclick="k3rotate()">Right</button>
-						<div>
-							<br>
-							<h3  style="font-size: 20px;">Instructions</h3>
-							<ol style="font-size: 15px;">
-								<li>Press start (converts to 24x14)</li>
-								<li>Rotate right</li>
-								<li>Convert to 8x42</li>
-								<li>Rotate right</li>
-								<li>Read!</li>
-							</ol>
 						</div>
-					</div>
-					<script type="text/javascript">
-						k3 = "ENDYAHROHNLSRHEOCPTEOIBIDYSHNAIACHTNREYULDSLLSLLNOHSNOSMRWXMNETPRNGATIHNRARPESLNNELEBLPIIACAEWMTWNDITEENRAHCTENEUDRETNHAEOETFOLSEDTIWENHAEIOYTEYQHEENCTAYCREIFTBRSPAMHHEWENATAMATEGYEERLBTEEFOASFIOTUETUAEOTOARMAEERTNRTIBSEDDNIAAHTTMSTEWPIEROAGRIEWFEBAECTDDHILCEIHSITEGOEAOSDDRYDLORITRKLMLEHAGTDHARDPNEOHMGFMFEUHEECDMRIPFEIMEHNLSSTTRTVDOHW";
-						k3text = k3;
-						k3working = [];
-
-						function k3textify() {
-							k3text = "";
-							for (var i in k3working) {
-								k3text += k3working[i].join('');
-							}
-						}
-
-						function k3display() {
-							var disp = "";
-							for (var i in k3working) {
-								disp += k3working[i].join(' ') + "\n";
-							}
-							document.getElementById('k3display').innerHTML = disp;
-						}
-
-						function k3resize(x, y) {
-							k3textify();
+						<div class="right">
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<button style="text-align: center; height: 40px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" onclick="k3init()">Start</button>
+							<input style="text-align: center; height: 36px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" id="k3x" type="number" placeholder="24"><span style="font-size: 15px;">x</span><input style="text-align: center; height: 36px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" id="k3y" type="number" placeholder="14">
+							<button style="text-align: center; height: 40px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" onclick="k3resize(parseInt(document.getElementById('k3x').value), parseInt(document.getElementById('k3y').value))">Resize</button>
+							<button style="text-align: center; height: 40px; width: 75px; font-size: 15px; border: 1px solid #666; background-color: #333; color: #FFF;" onclick="k3rotate()">Right</button>
+							<div>
+								<br>
+								<h3  style="font-size: 20px;">Instructions</h3>
+								<ol style="font-size: 15px;">
+									<li>Press start (converts to 24x14)</li>
+									<li>Rotate right</li>
+									<li>Convert to 8x42</li>
+									<li>Rotate right</li>
+									<li>Read!</li>
+								</ol>
+							</div>
+						</div>
+						<script type="text/javascript">
+							k3 = "ENDYAHROHNLSRHEOCPTEOIBIDYSHNAIACHTNREYULDSLLSLLNOHSNOSMRWXMNETPRNGATIHNRARPESLNNELEBLPIIACAEWMTWNDITEENRAHCTENEUDRETNHAEOETFOLSEDTIWENHAEIOYTEYQHEENCTAYCREIFTBRSPAMHHEWENATAMATEGYEERLBTEEFOASFIOTUETUAEOTOARMAEERTNRTIBSEDDNIAAHTTMSTEWPIEROAGRIEWFEBAECTDDHILCEIHSITEGOEAOSDDRYDLORITRKLMLEHAGTDHARDPNEOHMGFMFEUHEECDMRIPFEIMEHNLSSTTRTVDOHW";
+							k3text = k3;
 							k3working = [];
-							for (var i = 0; i < y; i++) {
-								k3working.push(k3text.substr(i*x, x).split(''));
-							}
-							k3display();
-						}
 
-						function k3rotate() {
-							var temp = [];
-							for (var y = 0; y < k3working[0].length; y++) {
-								temp.push([]);
-								for (var x = 0; x < k3working.length; x++) {
-									temp[y][x] = k3working[k3working.length -1 - x][y];
+							function k3textify() {
+								k3text = "";
+								for (var i in k3working) {
+									k3text += k3working[i].join('');
 								}
 							}
-							document.getElementById('k3x').value = temp[0].length;
-							document.getElementById('k3y').value = temp.length;
-							k3working = temp;
-							k3display();
-						}
 
-						function k3init() {
-							k3working = [];
-							for (var i = 0; i < 14; i++) {
-								k3working.push(k3.substr(i*24, 24).split(''));
+							function k3display() {
+								var disp = "";
+								for (var i in k3working) {
+									disp += k3working[i].join(' ') + "\n";
+								}
+								document.getElementById('k3display').innerHTML = disp;
 							}
-							document.getElementById('k3x').value = k3working[0].length;
-							document.getElementById('k3y').value = k3working.length;
-							k3display();
-						}
-					</script>
+
+							function k3resize(x, y) {
+								k3textify();
+								k3working = [];
+								for (var i = 0; i < y; i++) {
+									k3working.push(k3text.substr(i*x, x).split(''));
+								}
+								k3display();
+							}
+
+							function k3rotate() {
+								var temp = [];
+								for (var y = 0; y < k3working[0].length; y++) {
+									temp.push([]);
+									for (var x = 0; x < k3working.length; x++) {
+										temp[y][x] = k3working[k3working.length -1 - x][y];
+									}
+								}
+								document.getElementById('k3x').value = temp[0].length;
+								document.getElementById('k3y').value = temp.length;
+								k3working = temp;
+								k3display();
+							}
+
+							function k3init() {
+								k3working = [];
+								for (var i = 0; i < 14; i++) {
+									k3working.push(k3.substr(i*24, 24).split(''));
+								}
+								document.getElementById('k3x').value = k3working[0].length;
+								document.getElementById('k3y').value = k3working.length;
+								k3display();
+							}
+						</script>
+					</section>
+					<section>
+						<h2>K3 - Decrypted</h2>
+						<p>
+    SLOWLY DESPARATLY SLOWLY THE REMAINS OF PASSAGE DEBRIS THAT ENCUMBERED THE LOWER PART OF THE DOORWAY WAS REMOVED WITH TREMBLING HANDS I MADE A TINY BREACH IN THE UPPER LEFT HAND CORNER AND THEN WIDENING THE HOLE A LITTLE I INSERTED THE CANDLE AND PEERED IN THE HOT AIR ESCAPING FROM THE CHAMBER CAUSED THE FLAME TO FLICKER BUT PRESENTLY DETAILS OF THE ROOM WITHIN EMERGED FROM THE MIST X CAN YOU SEE ANYTHING Q ? </p>
+					</section>
+				</section>
+				
+				<section>
+					<h2>K4 - Ciphertext</h2>
+					<p>OBKR<br>UOXOGHULBSOLIFBBWFLRVQQPRNGKSSO<br>TWTQSJQSSEKZZWATJKLUDIAWINFBNYP<br>VTTMZFPKWGDKZXTJCDIGKUHUAUEKCAR</p>
+				</section>
+				
+				<section>
+					<h2>Can you solve it?</h2>
+					<h3>Questions?</h3>
 				</section>
 			</div>
 
